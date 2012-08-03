@@ -18,7 +18,15 @@ if(isset($_SESSION['democracylab_user_id'])) {
 	$democracylab_user_id = $_SESSION['democracylab_user_id'];
 	$democracylab_user_role = $_SESSION['democracylab_user_role'];
 } else {
-	header('Location: index.php');
+	$pageURL = 'http';
+	if ($_SERVER["HTTPS"] == "on") {$pageURL .= "s";}
+	$pageURL .= "://";
+	if ($_SERVER["SERVER_PORT"] != "80") {
+		$pageURL .= $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"].$_SERVER["REQUEST_URI"];
+	} else {
+		$pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
+	}
+	header('Location: index.php?redirect_to=' . urlencode($pageURL));
 	exit();
 }
 

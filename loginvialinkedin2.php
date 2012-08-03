@@ -30,6 +30,7 @@ $_SESSION['access_token'] = $access_token;
 /* Remove no longer needed request tokens */
 unset($_SESSION['oauth_token']);
 unset($_SESSION['oauth_token_secret']);
+$redirect_to = isset($_SESSION['redirect_to']) ? $_SESSION['redirect_to'] : '';
 
 /* If HTTP response is 200 continue otherwise send to connect page to retry */
 if (200 == $connection->http_code) {
@@ -52,7 +53,11 @@ if (200 == $connection->http_code) {
 	$_SESSION['democracylab_user_id'] = $democracylab_user_id;
 	$_SESSION['democracylab_user_role'] = $democracylab_user_role;
 
-	header('Location: ./summary.php');
+	if($redirect_to) {
+		header('Location: ' . $redirect_to);
+	} else {
+		header('Location: ./summary.php');
+	}
 } else {
 	header('Location: ./cleartwittersessions.php');
 }

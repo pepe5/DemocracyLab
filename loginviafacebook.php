@@ -27,5 +27,9 @@ session_start();
 $_SESSION['democracylab_user_id'] = $democracylab_user_id;
 $_SESSION['democracylab_user_role'] = $democracylab_user_role;
 
-header('Location: summary.php');
+if(isset($_REQUEST['redirect_to'])) {
+	header('Location: ' . $_REQUEST['redirect_to']);
+} else {
+	header('Location: summary.php');
+}
 ?>

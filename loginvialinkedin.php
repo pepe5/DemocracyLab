@@ -15,7 +15,11 @@ $request_token = $connection->getRequestToken(OAUTH_CALLBACK);
 /* Save temporary credentials to session. */
 $_SESSION['oauth_token'] = $token = $request_token['oauth_token'];
 $_SESSION['oauth_token_secret'] = $request_token['oauth_token_secret'];
- 
+if(isset($_SESSION['redirect_to'])) {
+	$_SESSION['redirect_to'] = $_REQUEST['redirect_to'];
+}
+unset($_SESSION['redirect_to']);
+
 /* If last connection failed don't display authorization link. */
 switch ($connection->http_code) {
   case 200:

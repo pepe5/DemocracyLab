@@ -38,10 +38,18 @@ require_once(DL_BASESCRIPT . '/AppInfo.php');
     <script>
 	  $(document).ready(function () {
 		$('#twitter-login-button').click(function () {
-			window.location='loginviatwitter.php';
+			window.location='loginviatwitter.php'<?php
+				if(isset($_REQUEST['redirect_to'])) {
+					echo "+ '?redirect_to=" . urlencode($_REQUEST['redirect_to']) . "'";
+				}
+			?>;
 		});
 		$('#linkedin-login-button').click(function () {
-			window.location='loginvialinkedin.php';
+			window.location='loginvialinkedin.php'<?php
+				if(isset($_REQUEST['redirect_to'])) {
+					echo "+ '?redirect_to=" . urlencode($_REQUEST['redirect_to']) . "'";
+				}
+			?>;
 		});
 	  });
       window.fbAsyncInit = function() {
@@ -55,7 +63,11 @@ require_once(DL_BASESCRIPT . '/AppInfo.php');
 		FB.Event.subscribe('auth.login', function(response) {
 		    var uid = response.authResponse.userID;
 		    var accessToken = response.authResponse.accessToken;
-			window.location = "loginviafacebook.php?uid=" + uid + "&token=" + accessToken;
+			window.location = "loginviafacebook.php?uid=" + uid + "&token=" + accessToken<?php
+				if(isset($_REQUEST['redirect_to'])) {
+					echo " + '&redirect_to=" . urlencode($_REQUEST['redirect_to']) . "'";
+				}
+			?>;
 		});
 		FB.getLoginStatus(function(response) {
 		  if (response.status === 'connected') {
@@ -67,7 +79,11 @@ require_once(DL_BASESCRIPT . '/AppInfo.php');
 		    var uid = response.authResponse.userID;
 		    var accessToken = response.authResponse.accessToken;
 			$('#facebook-login-button').click(function () {
-				window.location = "loginviafacebook.php?uid=" + uid + "&token=" + accessToken;
+				window.location = "loginviafacebook.php?uid=" + uid + "&token=" + accessToken<?php
+					if(isset($_REQUEST['redirect_to'])) {
+						echo " + '&redirect_to=" . urlencode($_REQUEST['redirect_to']) . "'";
+					}
+				?>;
 			});
 		  } else if (response.status === 'not_authorized') {
 		    // the user is logged in to Facebook, 
@@ -77,7 +93,11 @@ require_once(DL_BASESCRIPT . '/AppInfo.php');
 					if (response.status == "connected") {
 					    var uid = response.authResponse.userID;
 					    var accessToken = response.authResponse.accessToken;
-						window.location = "loginviafacebook.php?uid=" + uid + "&token=" + accessToken;
+						window.location = "loginviafacebook.php?uid=" + uid + "&token=" + accessToken<?php
+							if(isset($_REQUEST['redirect_to'])) {
+								echo " + '&redirect_to=" . urlencode($_REQUEST['redirect_to']) . "'";
+							}
+						?>;
 					}
 				});
 			});
@@ -88,7 +108,11 @@ require_once(DL_BASESCRIPT . '/AppInfo.php');
 					if (response.status == "connected") {
 					    var uid = response.authResponse.userID;
 					    var accessToken = response.authResponse.accessToken;
-						window.location = "loginviafacebook.php?uid=" + uid + "&token=" + accessToken;
+						window.location = "loginviafacebook.php?uid=" + uid + "&token=" + accessToken<?php
+							if(isset($_REQUEST['redirect_to'])) {
+								echo " + '&redirect_to=" . urlencode($_REQUEST['redirect_to']) . "'";
+							}
+						?>;
 					}
 				});
 			});
