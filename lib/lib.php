@@ -49,18 +49,26 @@ $(function () {
 				} else {
 					$("#description-block").html('<span class="instructions">(fetching description...)</span>');
 					var data = {};
-					data['entityid'] = newid;
+					var ids = new Array();
+					$('li').each(function(index) {
+						if($(this).attr('dl_id')) {
+							ids.push($(this).attr('dl_id'));
+						}
+					});
+					data['entityid'] = ids.join(',');
 					$.ajax({
 						url: '<?= dl_facebook_url("getdescription_ajax.php") ?>',
 						context: document.body,
 						data: data,
 						type: "GET",
-						dataType: 'html',
+						dataType: 'json',
 						success: function (data) {
+							for(var xid in data) {
+								$("#description-block").data('dl_' + xid,data[xid]);
+							}
 							var rtrnid = $("#description-block").attr('dl_id');
-							$("#description-block").data('dl_' + newid,data);
 							if(newid == rtrnid) {
-								$("#description-block").html(data).data('dl_' + newid,data);
+								$("#description-block").html($("#description-block").data('dl_' + rtrnid));
 							}
 						},
 						global: false
