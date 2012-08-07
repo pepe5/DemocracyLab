@@ -253,7 +253,7 @@ $(function () {
 
 <div id="adding-section" class="clearfix">
 <?php if($type == 3) { ?>
-	<a href="<?= dl_facebook_url('entities.php',2) ?>">Go to step 1 &ndash; Values</a><br>
+	<a href="<?= dl_facebook_url('entities.php',2) ?>">Go to step 3 &ndash; Values</a><br>
 	<a href="<?= dl_facebook_url('summary.php') ?>">Return to the overview page and view my results</a><br>
 <?php } else if($type == 2) { ?>
 	<a href="<?= dl_facebook_url('entities.php',3) ?>">Go to step 2 &ndash; Policies</a><br>
