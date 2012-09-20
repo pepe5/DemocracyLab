@@ -53,7 +53,7 @@ skip_your_query:
 	<link href="stylesheets/jquery-ui.css" rel="stylesheet" type="text/css"/>
 	<script src="js/jquery-1.7.2.js"></script>
 	<script src="js/jquery-ui-1.8.16.min.js"></script>
-	<script src="js/jquery.ui.touch-punch.js"></script>
+	<script src="js/jquery.ui.touch-punch.min.js"></script>
 </head>
 <body>
 <header id="blank-header" class="clearfix">

@@ -15,14 +15,6 @@
 
   // Ignore browsers without touch support
   if (!$.support.touch) {
-    //MOREMORE
-		$.ajax({
-			url: 'http://democracylab.herokuapp.com/dummy/no-touch-support',
-			context: document.body,
-			type: "GET",
-			global: false
-		})
-    //MOREMORE
     return;
   }
 
@@ -39,14 +31,6 @@
 
     // Ignore multi-touch events
     if (event.originalEvent.touches.length > 1) {
-      //MOREMORE
-  		$.ajax({
-  			url: 'http://democracylab.herokuapp.com/dummy/simulate-mouse-event-multi-touch',
-  			context: document.body,
-  			type: "GET",
-  			global: false
-  		})
-      //MOREMORE
       return;
     }
 
@@ -74,14 +58,6 @@
       null              // relatedTarget              
     );
 
-    //MOREMORE
-		$.ajax({
-			url: 'http://democracylab.herokuapp.com/dummy/simulated-event-' + simulatedType,
-			context: document.body,
-			type: "GET",
-			global: false
-		})
-    //MOREMORE
     // Dispatch the simulated event to the target element
     event.target.dispatchEvent(simulatedEvent);
   }
@@ -96,14 +72,6 @@
 
     // Ignore the event if another widget is already being handled
     if (touchHandled || !self._mouseCapture(event.originalEvent.changedTouches[0])) {
-      //MOREMORE
-  		$.ajax({
-  			url: 'http://democracylab.herokuapp.com/dummy/touch-start-already-handled',
-  			context: document.body,
-  			type: "GET",
-  			global: false
-  		})
-      //MOREMORE
       return;
     }
 
@@ -131,14 +99,6 @@
 
     // Ignore event if not handled
     if (!touchHandled) {
-      //MOREMORE
-  		$.ajax({
-  			url: 'http://democracylab.herokuapp.com/dummy/touch-move-not-handled',
-  			context: document.body,
-  			type: "GET",
-  			global: false
-  		})
-      //MOREMORE
       return;
     }
 
@@ -157,14 +117,6 @@
 
     // Ignore event if not handled
     if (!touchHandled) {
-      //MOREMORE
-  		$.ajax({
-  			url: 'http://democracylab.herokuapp.com/dummy/touch-end-not-handled',
-  			context: document.body,
-  			type: "GET",
-  			global: false
-  		})
-      //MOREMORE
       return;
     }
 
@@ -192,14 +144,6 @@
    * original mouse event handling methods.
    */
   mouseProto._mouseInit = function () {
-    //MOREMORE
-		$.ajax({
-			url: 'http://democracylab.herokuapp.com/dummy/mouse-init',
-			context: document.body,
-			type: "GET",
-			global: false
-		})
-    //MOREMORE
     
     var self = this;
 
