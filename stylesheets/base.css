@@ -274,6 +274,8 @@ header h1 {
   color: #777;
   margin-bottom: 0.7em;
   margin-left: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 .entity-list ol {
   display: block;

@@ -156,7 +156,7 @@ function list_with_histogram($items) {
 			</p>
 			<p class="description">
 				To participate, you'll rank the objectives that are most
-				important <br>to you.
+				important to you.
 			</p><?php
 		}
 		?>
@@ -173,7 +173,7 @@ function list_with_histogram($items) {
 					Policies are plans of action. They are detailed descriptions of how we can achieve our objectives. 
 				</p>
 				<p class="description">
-					To participate, you'll rank the <br>policies that you believe are best <br>for this issue.
+					To participate, you'll rank the policies that you believe are best for this issue.
 				</p><?php				
 			}
 		}
