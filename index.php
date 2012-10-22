@@ -15,7 +15,7 @@ require_once(DL_BASESCRIPT . '/AppInfo.php');
 <body>
 <header class="clearfix">
 	<div style="margin-left: -5px; background-image: url(images/dl.png); width: 293px; height: 102px; float: left; margin-right: 20px;"></div>
-	<div style="float: left; width: 395px;">
+	<div style="float: left; width: 550px;">
 		<h1 style="color: #6485a2; font-size: 210%;">Welcome to our engagement platform</h1>
 		<p style="color: black;
 		font: 14px/1.5em 'Lucida Grande',Arial,sans-serif;

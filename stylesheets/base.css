@@ -9,7 +9,7 @@ body {
   color: #999;
   font: 14px/1.5em "Lucida Grande", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
-  width: 742px;
+  width: 950px;
 
   margin: 20px; /* NOTE: Temporary */
 }
@@ -264,7 +264,7 @@ header h1 {
 }
 #entities-summary .entity-list {
   float: left;
-  width: 238px;
+  width: 298px;
   text-align: center;
 }
 #entities-summary .description {
@@ -282,7 +282,7 @@ header h1 {
 }
 .entity-list li {
   display: block;
-  width: 205px;
+  width: 265px;
   height: 16px;
   padding: 1px 0 0 24px;
   margin-bottom: 5px;
@@ -308,6 +308,7 @@ header h1 {
 .histogram {
   position: relative;
   margin-top: 2px;
+  left: 50px;
 }
 .values-list li {
   border: 1px solid #619ed3;
@@ -323,7 +324,7 @@ header h1 {
 }
 
 #left-sorting-box, #right-sorting-box {
-  width: 300px; 
+  width: 370px; 
   float: left; 
   padding: 10px;
 }

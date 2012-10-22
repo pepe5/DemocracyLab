@@ -87,7 +87,7 @@ function list_with_histogram($items) {
 <body>
 <header class="clearfix">
 	<div style="margin-left: -5px; background-image: url(images/dl.png); width: 293px; height: 102px; float: left; margin-right: 20px;"></div>
-	<div style="float: left; width: 395px;">
+	<div style="float: left; width: 550px;">
 		<h1 style="color: #6485a2; font-size: 210%;">Welcome to our engagement platform</h1>
 		<p style="color: black;
 		font: 14px/1.5em 'Lucida Grande',Arial,sans-serif;
@@ -121,7 +121,7 @@ function list_with_histogram($items) {
 </div>
 
     <div id="entities-summary" class="clearfix">
-	<div class="entity-list" style="width: 238px; float: left;">
+	<div class="entity-list" style="float: left;">
 		<?php
 		if($rankings['values']) {
 			?><a href="<?= dl_facebook_url('entities.php',1) ?>">Step 3 - Share Your Values</a><ol class="values-list"><?php
@@ -143,7 +143,7 @@ function list_with_histogram($items) {
 		}
 		?>
 	</div>
-	<div class="entity-list" style="width: 238px; float: left;">
+	<div class="entity-list" style="float: left;">
 		<?php
 		if($rankings['objectives']) {
 			?><a href="<?= dl_facebook_url('entities.php',2) ?>">Step 1 - Prioritize Objectives</a><ol class="objectives-list"><?php
@@ -161,7 +161,7 @@ function list_with_histogram($items) {
 		}
 		?>
 	</div>
-	<div class="entity-list" style="width: 238px; float: left;">
+	<div class="entity-list" style="float: left;">
 		<?php
 		if($rankings['policies']) {
 			?><a href="<?= dl_facebook_url('entities.php',3) ?>">Step 2 - Evaluate Policies</a><ol class="policies-list"><?php
