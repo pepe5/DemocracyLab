@@ -337,6 +337,19 @@ header h1 {
 .second-sorting-box {
   padding-top: 10px;
 }
+#right-sorting-box .arrow-div {
+  float: left;
+}
+#right-sorting-box .arrow-div img {
+  padding-top: 30px;
+}
+#right-sorting-box .outer-div {
+  float: left; 
+  padding-left: 8px;
+}
+#right-sorting-box ol {
+  min-width: 290px;
+}
 #passive-list {
   min-height: 133px; 
   border: thin solid gray; 

@@ -166,7 +166,8 @@ skip_your_query:
 	</div>
 
 	<div id="right-sorting-box">
-		<div>
+		<div class="arrow-div"><img src="images/drawn-right-arrow.jpg"></div>
+		<div class="outer-div">
 			<p class="sorting-box-legend">You feel positive about:</p>
 	<ol class="<?= dl_typestring($type,'lcp') ?>-list entity-list connectedSortable" id="active-positive-list">
 		<?php
@@ -178,8 +179,9 @@ skip_your_query:
 		?>
 	</ol>
 		</div>
-	<p class="sorting-box-legend second-sorting-box">You feel negative about:</p>
-		<div>
+		<div class="arrow-div" style="clear: both;"><img src="images/drawn-right-arrow.jpg"></div>
+		<div class="outer-div">
+			<p class="sorting-box-legend second-sorting-box">You feel negative about:</p>
 	<ol class="<?= dl_typestring($type,'lcp') ?>-list entity-list connectedSortable" id="active-negative-list">
 		<?php
 		foreach($entities as $erec) {
