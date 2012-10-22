@@ -124,7 +124,7 @@ function list_with_histogram($items) {
 	<div class="entity-list" style="float: left;">
 		<?php
 		if($rankings['values']) {
-			?><a href="<?= dl_facebook_url('entities.php',1) ?>">Step 3 - Share Your Values</a><ol class="values-list"><?php
+			?><a href="<?= dl_facebook_url('entities.php',1) ?>">Values</a><ol class="values-list"><?php
 			list_with_histogram($rankings['values']); ?></ol><?php
 		} else {
 			if($rankings['policies']) {
@@ -146,7 +146,7 @@ function list_with_histogram($items) {
 	<div class="entity-list" style="float: left;">
 		<?php
 		if($rankings['objectives']) {
-			?><a href="<?= dl_facebook_url('entities.php',2) ?>">Step 1 - Prioritize Objectives</a><ol class="objectives-list"><?php
+			?><a href="<?= dl_facebook_url('entities.php',2) ?>">Objectives</a><ol class="objectives-list"><?php
 			list_with_histogram($rankings['objectives']); ?></ol><?php
 		} else {
 			?><a href="<?= dl_facebook_url('entities.php',2) ?>">Step 1 - Prioritize Objectives</a>
@@ -164,7 +164,7 @@ function list_with_histogram($items) {
 	<div class="entity-list" style="float: left;">
 		<?php
 		if($rankings['policies']) {
-			?><a href="<?= dl_facebook_url('entities.php',3) ?>">Step 2 - Evaluate Policies</a><ol class="policies-list"><?php
+			?><a href="<?= dl_facebook_url('entities.php',3) ?>">Policies</a><ol class="policies-list"><?php
 			list_with_histogram($rankings['policies']); ?></ol><?php
 		} else {
 			if($rankings['objectives']) {
