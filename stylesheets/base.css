@@ -13,6 +13,12 @@ body {
 
   margin: 20px; /* NOTE: Temporary */
 }
+body.wide {
+  width: 1380px;
+}
+div.body {
+  width: 950px;
+}
 
 a:link, a:visited {
   color: #3b5998;

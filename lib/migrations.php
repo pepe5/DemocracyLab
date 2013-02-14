@@ -224,6 +224,20 @@ function fix_bug_37() {
 }
 fix_bug_37();
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+function add_conversations() {
+	global $dbconn;
+	if( !do_migration(__FUNCTION__) ) return;
+	pg_query($dbconn, "CREATE TABLE democracylab_conversations (
+		conversation_id SERIAL PRIMARY KEY,
+		time TIMESTAMP,
+		user_id INT,
+		entity_id INT,
+		type INT,
+		body TEXT NOT NULL)" );
+	record_migration(__FUNCTION__);
+}
+add_conversations();
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 pg_close( $dbconn );
 

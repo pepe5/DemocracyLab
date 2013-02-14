@@ -26,6 +26,8 @@ if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROT
   exit();
 }
 
+date_default_timezone_set('America/Los_Angeles');
+
 function dl_typestring($type,$idx=0) {
 	if($type == 1) {
 		$ar = array('lcs'=>'value','ucs'=>'Value','lcp'=>'values','ucp'=>'Values');

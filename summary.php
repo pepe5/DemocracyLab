@@ -84,7 +84,8 @@ function list_with_histogram($items) {
 	<script src="js/jquery-1.7.2.js"></script>
 	<!--[if IE]><script src="js/excanvas.js"></script><![endif]-->
 </head>
-<body>
+<body class="wide">
+	<div class="body" style="float: left;">
 <header class="clearfix">
 	<div style="margin-left: -5px; background-image: url(images/dl.png); width: 293px; height: 102px; float: left; margin-right: 20px;"></div>
 	<div style="float: left; width: 550px;">
@@ -400,5 +401,101 @@ $(function () {
 });
 </script>
 <?php democracylab_hover_javascript(); ?>
+</div>
+<style>
+div.comment-outer {
+	float: left; 
+	border: 1px solid #b3b3b3; 
+	margin-left: -1px;
+	width: 420px; 
+	color: black;
+	padding-left: 5px;
+}
+div.comment {
+	margin-bottom: 1em;
+}
+.comment .name {
+	font-weight: bold;
+}
+.comment .timestamp {
+	margin-left: 1em;
+	color: #b3b3b3
+}
+.comment .cbody {
+	
+}
+</style>
+<div class="comment-outer">
+	<h1 style="color: #6485a2; font-size: 160%; line-height: 1.2em; text-align: center;">The conversation</h1>
+<?php
+function time_elapsed_string($ptime) {
+    $etime = time() - $ptime;
+    
+    if ($etime < 1) {
+        return 'just now';
+    }
+    
+    $a = array( 12 * 30 * 24 * 60 * 60  =>  'year',
+                30 * 24 * 60 * 60       =>  'month',
+                24 * 60 * 60            =>  'day',
+                60 * 60                 =>  'hour',
+                60                      =>  'minute',
+                1                       =>  'second'
+                );
+    
+    foreach ($a as $secs => $str) {
+        $d = $etime / $secs;
+        if ($d == 1) {
+			if($str == 'hour') {
+				return 'an hour ago';
+			}
+			if($str == 'day') {
+				return 'yesterday';
+			}
+			if($str == 'month') {
+				return 'last month';
+			}
+			if($str == 'year') {
+				return 'last year';
+			}
+		}
+		if ($d > 0.7 && $d < 1) {
+            return 'about ' . (substr($str,0,1) == 'h' ? 'an ' : 'a ') . $str . ' ago';
+		}
+        if ($d >= 1) {
+            $r = round($d);
+            return $r . ' ' . $str . ($r > 1 ? 's' : '') . ' ago';
+        }
+    }
+}
+$result = pg_query("SELECT * FROM democracylab_conversations LEFT JOIN democracylab_users ON democracylab_conversations.user_id = democracylab_users.user_id ORDER BY time");
+while($row = pg_fetch_object($result)) {
+?>
+<div class="comment">
+	<span class="name"><?= $row->name ?></span> <span class="timestamp"><?= time_elapsed_string(strtotime($row->time)) ?></span><br>
+	<p class="cbody"><?= htmlspecialchars($row->body) ?></p>
+</div>
+<?php
+}
+?>
+	<div class="comment">
+		<?php
+		$result = pg_query("SELECT * FROM democracylab_users WHERE user_id = " . $_SESSION['democracylab_user_id']);
+		$row = pg_fetch_object($result);
+		?>
+		<span class="name"><?= $row->name ?></span> <span class="timestamp">continue the conversation now</span><br>
+		<p class="cbody">
+			<form method="POST" action="addcomment_post.php">
+			<?= dl_facebook_form_fields(0) ?>
+			<input type="hidden" name="eid" value="0">
+			<input type="hidden" name="r" value="summary.php">
+			<div class="field-contents"><textarea name="body" rows=3 cols=50></textarea></div>
+			<div class="clearfix"></div>
+			<input style="float: right" type="submit" value="Post comment">
+			<div class="clearfix"></div>
+			</form>
+		</p>
+	</div>
+</div>
 </body>
 </html>
