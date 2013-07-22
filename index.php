@@ -131,7 +131,7 @@ require_once(DL_BASESCRIPT . '/AppInfo.php');
 	<div style="margin-left: 80px;">
     	<div id="facebook-login-button" style="background-image: url(images/login-with-facebook.jpg); width: 152px; height: 22px; margin-top: 20px; cursor: pointer;"></div>
 		<div id="twitter-login-button" style="background-image: url(images/sign-in-with-twitter-d.png); width: 151px; height: 24px; margin-top: 20px; cursor: pointer;"></div>
-		<div id="linkedin-login-button" style="background-image: url(images/linkedin_login.png); width: 152px; height: 21px; margin-top: 20px; cursor: pointer;"></div>
+<!--		<div id="linkedin-login-button" style="background-image: url(images/linkedin_login.png); width: 152px; height: 21px; margin-top: 20px; cursor: pointer;"></div> -->
 	</div>
 </div>
 
