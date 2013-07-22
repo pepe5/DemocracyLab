@@ -80,7 +80,7 @@ if(isset($_POST['S45'])) {
 </head>
 <body>
 <header class="clearfix">
-	<div style="margin-left: -5px; background-image: url(images/dl.png); width: 293px; height: 102px; float: left; margin-right: 20px;"></div>
+	<div style="margin-left: -5px; background-image: url(images/vv.png); width: 293px; height: 102px; float: left; margin-right: 20px;"></div>
 </header>
 
 <form method=POST>

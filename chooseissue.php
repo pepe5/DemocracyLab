@@ -14,7 +14,7 @@ require_once(DL_BASESCRIPT . '/lib/lib.php');
 </head>
 <body>
 	<header class="clearfix">
-		<div style="margin-left: -5px; background-image: url(images/dl.png); width: 293px; height: 102px; float: left; margin-right: 20px;"></div>
+		<div style="margin-left: -5px; background-image: url(images/vv.png); width: 293px; height: 102px; float: left; margin-right: 20px;"></div>
 	</header>
 
 	<?php $result = pg_query($dbconn,"SELECT * FROM democracylab_issues"); 
